@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
 const Register = () => {
   const { signInUsingGoogle } = useAuth()
-  const [user, setUser] = useState({})
+  
     const auth = getAuth();
     const [email, setEmail] = useState('');
     const [password, setPassward] = useState('');
@@ -53,9 +53,8 @@ const Register = () => {
 
         const procesLogIn = (auth, email, password)=>{
           signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            // Signed in 
-            setUser (userCredential.user);
+          .then((result) => {
+            history.push(redirect_uri);
             // ...
           })
           .catch((error) => {
