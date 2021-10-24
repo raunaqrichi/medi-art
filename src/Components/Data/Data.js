@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../Data/Data.css'
 
 const Data = (props) => {
-    const{id,name,doctors,image} = props.card;
+    const{id,name,doctors,image,ratings} = props.card;
 
     return (
       
@@ -15,6 +15,7 @@ const Data = (props) => {
       <Image src={image} fluid/>
       <h1>Name: {name}</h1>
       <h2>Doctors: {doctors}</h2>
+      <h4>Ratings: {ratings}</h4>
       <Link to={`/ServiceDetail/${id}`}><Button className='btn btn-secondary'>See More</Button></Link>
       </div>
       
