@@ -1,0 +1,8 @@
+.data{
+    box-shadow: 10px 10px 10px 10px gray;
+    text-align: center;
+}
+.data:hover{
+    transform: scale(1.10);
+    background-color: rgb(232, 242, 247);
+}
