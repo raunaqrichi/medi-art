@@ -7,7 +7,7 @@ import '../Header/Header.css'
 
 const Header = () => {
   const {user, logOut} = useAuth();
-  console.log(user)
+ 
     
     return (
         <div>

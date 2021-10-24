@@ -7,7 +7,7 @@ import '../ServiceDetail/Servicedetail.css'
 const ServiceDetail = () => {
     let {Id} = useParams();
     Id = parseInt(Id);
-    console.log('id',typeof(Id))
+    
     
     const [serviceDetails, setServiceDetails] = useState([]);
     const [singleService, setSingleService] = useState({});
@@ -22,11 +22,11 @@ const ServiceDetail = () => {
         .then(res => res.json())
         .then(data => {
             setServiceDetails(data)
-        console.log('fetched data',data)
+        
         })
      
     },[Id])
-    console.log('serviceDetails',serviceDetails);
+    
 
     useEffect(() =>{
         const foundService = serviceDetails?.find(service => service?.id === Id)
